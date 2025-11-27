@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import LoanInput from "./components/LoanInput";
+import CompareRate from "./components/CompareRate";
+import Results from "./components/Results";
+import SectionCard from "./components/SectionCard";
+import { calculateEligibility } from "./api";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [formData, setFormData] = useState({});
+  const [comparison, setComparison] = useState({});
+  const [results, setResults] = useState(null);
+
+  const handleCalculate = async () => {
+    const response = await calculateEligibility(formData);
+    setResults(response);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="container">
+      <h4 className="tag">SAVINGS CALCULATOR</h4>
+      <h1 className="title">Calculate Your Savings with Clear Credit AI</h1>
 
-export default App
+      <SectionCard number="1" title="Enter your current loan details">
+        <LoanInput onChange={setFormData} />
+      </SectionCard>
+
+      <SectionCard number="2" title="Choose a rate to compare">
+        <CompareRate onChange={setComparison} />
+      </SectionCard>
+
+      <SectionCard number="3" title="Check the results">
+        {results && <Results data={results} />}
+        <button className="btn" onClick={handleCalculate}>Check Rates</button>
+        <p className="disclaimer">Checking rate won’t affect your credit score. Calculator results are for illustrative purposes only.</p>
+      </SectionCard>
+    </div>
+  );
+}
