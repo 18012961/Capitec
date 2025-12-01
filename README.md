@@ -2,8 +2,8 @@ Loan Eligibility Simulator – Capitec Version
 
 A full-stack loan eligibility and interest rate simulator built with:
 
-- Spring Boot (Backend)**
-- HTML, CSS, JavaScript (Frontend)**
+- Spring Boot (Backend)
+- HTML, CSS, JavaScript (Frontend)
 - Real-time loan validation
 - Dynamic product & purpose loading
 - Interest rate calculation engine
