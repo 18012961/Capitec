@@ -1,0 +1,14 @@
+com\loan\app\model\LoanRequest$LoanDetails.class
+com\loan\app\model\ValidationRules.class
+com\loan\app\Application.class
+com\loan\app\model\RateResponse.class
+com\loan\app\controller\ApiController.class
+com\loan\app\model\ProductsResponse.class
+com\loan\app\model\LoanResponse.class
+com\loan\app\model\Payment.class
+com\loan\app\model\LoanRequest$FinancialInfo.class
+com\loan\app\model\RateRequest.class
+com\loan\app\service\MockLoanService.class
+com\loan\app\model\LoanRequest$PersonalInfo.class
+com\loan\app\model\LoanRequest.class
+com\loan\app\model\Product.class
