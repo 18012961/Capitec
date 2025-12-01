@@ -4,55 +4,109 @@
   <meta charset="utf-8"/>
   <title>Loan Eligibility Simulator</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Loan Eligibility Simulator</h1>
 
-    <section class="card">
-      <h2>Applicant Info</h2>
-      <div class="row"><label>Age</label><input id="age" type="number" value="35"/></div>
-      <div class="row"><label>Employment Status</label>
-        <select id="employmentStatus">
-          <option value="employed">Employed</option>
-          <option value="self_employed">Self-employed</option>
-          <option value="unemployed">Unemployed</option>
-          <option value="retired">Retired</option>
-        </select>
+<div class="container">
+
+  <h1 class="title">Calculate Your Savings with Clear Credit AI</h1>
+
+
+  <section class="card">
+    <h2>1. Applicant Information</h2>
+
+    <div class="two-col">
+      <div class="field">
+        <label>Age</label>
+        <input id="age" type="number" value="35"/>
       </div>
-      <div class="row"><label>Employment Duration (months)</label><input id="employmentDuration" type="number" value="24"/></div>
-    </section>
 
-    <section class="card">
-      <h2>Financials</h2>
-      <div class="row"><label>Monthly Income</label><input id="monthlyIncome" type="number" value="25000"/></div>
-      <div class="row"><label>Monthly Expenses</label><input id="monthlyExpenses" type="number" value="15000"/></div>
-      <div class="row"><label>Existing Debt</label><input id="existingDebt" type="number" value="5000"/></div>
-      <div class="row"><label>Credit Score</label><input id="creditScore" type="number" value="650"/></div>
-    </section>
-
-    <section class="card">
-      <h2>Loan Details</h2>
-      <div class="row"><label>Product</label>
-        <select id="productSelect"></select>
+      <div class="field">
+        <label>Employment Duration (months)</label>
+        <input id="employmentDuration" type="number" value="24"/>
       </div>
-      <div class="row"><label>Purpose</label><select id="purposeSelect"></select></div>
-      <div class="row"><label>Requested Amount</label><input id="requestedAmount" type="number" value="150000"/></div>
-      <div class="row"><label>Loan Term (months)</label><input id="loanTerm" type="number" value="24"/></div>
-    </section>
-
-    <div class="actions">
-      <button id="checkBtn">Check Eligibility</button>
-      <button id="rateBtn">Calculate Interest</button>
     </div>
 
-    <section class="card">
-      <h2>Result</h2>
-      <pre id="result">No result yet.</pre>
-    </section>
+    <div class="field">
+      <label>Employment Status</label>
+      <select id="employmentStatus">
+        <option value="employed">Employed</option>
+        <option value="self_employed">Self-employed</option>
+        <option value="unemployed">Unemployed</option>
+        <option value="retired">Retired</option>
+      </select>
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>2. Financial Information</h2>
+
+    <div class="two-col">
+      <div class="field">
+        <label>Monthly Income</label>
+        <input id="monthlyIncome" type="number" value="25000"/>
+      </div>
+      <div class="field">
+        <label>Monthly Expenses</label>
+        <input id="monthlyExpenses" type="number" value="15000"/>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="field">
+        <label>Existing Debt</label>
+        <input id="existingDebt" type="number" value="5000"/>
+      </div>
+      <div class="field">
+        <label>Credit Score</label>
+        <input id="creditScore" type="number" value="650"/>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>3. Loan Details</h2>
+
+    <div class="field">
+      <label>Product</label>
+      <select id="productSelect"></select>
+    </div>
+
+    <div class="field">
+      <label>Purpose</label>
+      <select id="purposeSelect"></select>
+    </div>
+
+    <div class="two-col">
+      <div class="field">
+        <label>Requested Amount</label>
+        <input id="requestedAmount" type="number" value="150000"/>
+      </div>
+
+      <div class="field">
+        <label>Loan Term (months)</label>
+        <input id="loanTerm" type="number" value="24"/>
+      </div>
+    </div>
+  </section>
+
+  <div class="button-row">
+    <button id="checkBtn" class="btn-primary">Check Eligibility</button>
+    <button id="rateBtn" class="btn-secondary">Calculate Rate</button>
   </div>
 
-  <script src="/app.js"></script>
+
+  <section class="card">
+    <h2>Results</h2>
+    <pre id="result">No result yet.</pre>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
